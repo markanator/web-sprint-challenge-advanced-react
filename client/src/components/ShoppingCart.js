@@ -5,9 +5,9 @@ import React from "react";
 export default function ShoppingCart(props) {
   const total = props.cart.reduce((sum, d) => sum + d.price, 0);
   return (
-    <div className="cart">
+    <div className="cart" data-testid='cart'>
       {props.cart.map((plant) => (
-        <div className="plant-card" key={plant.id}>
+        <div className="plant-card" key={plant.id} data-testid={`plant ${plant.id}`}>
           <img className="plant-image" src={plant.img} alt={plant.name} />
           <div className="plant-details">
             <h2 className="plant-name">{plant.name}</h2>
